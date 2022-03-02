@@ -832,7 +832,7 @@ namespace Random_Features
 
                 if (Settings.ShowInLabOnly)
                 {
-                    if (GameController.Game.IngameState.Data.CurrentWorldArea.IsLabyrinthArea)
+                    if (GameController.Game.IngameState.WorldData.CurrentWorldArea.IsLabyrinthArea)
                         LabyrinthLabels();
                 }
                 else
@@ -1245,7 +1245,7 @@ namespace Random_Features
 
         private void RenderMapImages()
         {
-            var Area = GameController.Game.IngameState.Data.CurrentArea;
+            var Area = GameController.Game.IngameState.WorldData.CurrentArea;
             if (Area.IsTown || Area.RawName.Contains("Hideout")) return;
             if (GameController.Game.IngameState.IngameUi.Map.LargeMap.IsVisible)
             {

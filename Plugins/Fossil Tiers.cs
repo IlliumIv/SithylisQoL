@@ -25,7 +25,7 @@ namespace Random_Features
                 // download fossil data from current league via poe.ninja api
                 using (var webClient = new System.Net.WebClient())
                 {
-                    JsonDownload = webClient.DownloadString($"https://poe.ninja/api/data/itemoverview?type=Fossil&league={GameController.Game.IngameState.ServerData.League}");
+                    JsonDownload = webClient.DownloadString($"https://poe.ninja/api/data/itemoverview?type=Fossil&league={GameController.Game.IngameState.Data.ServerData.League}");
                     Fossils = JsonConvert.DeserializeObject<Fossils.RootObject>(JsonDownload);
                 }
 
